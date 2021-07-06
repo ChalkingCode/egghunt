@@ -23,7 +23,7 @@
 
 #### Install of packages needed
 	
-	
+	# This only needs to be ran once per env 
 	$ python packages.py
 
 ## HowTo
