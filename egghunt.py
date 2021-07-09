@@ -57,7 +57,10 @@ for container in containers:
     # all lists with the class "price-ship".
     # Then cleans the text of white space with strip()
     # Cleans the strip of "Shipping $" if it exists to just get number
-    shipping = container.findAll("li", {"class": "price-ship"})[0].text.strip().replace("$", "").replace(" Shipping", "")
+    try:
+        shipping = container.findAll("li", {"class": "price-ship"})[0].text.strip().replace("$", "").replace(" Shipping", "")
+    except IndexError:
+        continue
 
     # prints the dataset to console
     print("brand: " + brand + "\n")
